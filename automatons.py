@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 from collections import defaultdict
 from typing import Iterator, Union, Callable, Dict, Iterable, List, Optional, Tuple, TypeVar, Generic, Set
 
-from utils import IdentityDefaultdict, IdentityFrozenSet, IdentitySet 
+from utils import IdentityDefaultdict, IdentityFrozenSet, IdentitySet, clossing_index 
 
 
 epsilon = None
@@ -204,7 +204,7 @@ class EpsilonNFA:
             res.final_states.add(final)
             return res
         elif regex[0] == '(':
-            i = regex.find(')')
+            i = clossing_index(regex)
             left = EpsilonNFA.from_RegEx(regex[1:i])
             if regex[i+1] == '*':
                 for final in left.final_states:

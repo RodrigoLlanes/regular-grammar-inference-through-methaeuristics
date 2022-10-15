@@ -7,9 +7,9 @@ from typing import Optional
 
 # General grammar parameters
 S = 'S'
-N = {S, 'A', 'B', 'C', 'D', 'E'}
-sigma = {'a', 'b', 'c', 'd', 'e'}
-grammar = '(ab)*(cd)+'
+N = {S, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'}
+sigma = {'a', 'b', 'c', 'd', 'e', 'f', 'g'}
+target_grammar = 'a+b+'
 
 # Train data parameters
 positives = 500
@@ -20,7 +20,7 @@ test_rate = 0.1
 splits = 4
 mutations = 6
 iterations = 100
-genome_size = 10
+genome_size = 20
 population_size = 200
 replacement_rate = 0.4
 
